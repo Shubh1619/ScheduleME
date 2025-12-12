@@ -24,14 +24,6 @@ class Settings(BaseSettings):
     meta_redirect_uri: str
     meta_scopes: str
 
-    # Redis (Celery prep)
-    redis_url: str
-
-    # S3 / Cloudflare R2
-    aws_access_key_id: Optional[str] = None
-    aws_secret_access_key: Optional[str] = None
-    s3_bucket_name: Optional[str] = None
-    s3_endpoint_url: Optional[str] = None
 
     # Logging
     log_level: str = "INFO"

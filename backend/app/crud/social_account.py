@@ -2,6 +2,8 @@ from app.models.social_account import SocialAccount
 from app.core.security import encrypt_token
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional 
+from sqlalchemy import select
+from app.core import security
 
 
 async def create_social_account(db: AsyncSession, account_data: dict, user_id: str) -> SocialAccount:

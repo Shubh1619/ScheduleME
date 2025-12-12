@@ -49,3 +49,7 @@ alembic/versions/*.pyc
 # -----------------------------
 .DS_Store
 Thumbs.db
+
+
+cert.pem
+key.pem
