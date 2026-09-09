@@ -34,5 +34,5 @@ COPY --from=frontend-build /build/tsconfig.json /app/frontend/tsconfig.json
 COPY --from=frontend-build /build/next-env.d.ts /app/frontend/next-env.d.ts
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
-EXPOSE 8765
+EXPOSE 10000
 CMD ["/app/start.sh"]
