@@ -1,0 +1,13 @@
+.git
+**/node_modules
+**/.next
+**/venv
+.venv/
+**/__pycache__
+*.py[cod]
+*.db
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
