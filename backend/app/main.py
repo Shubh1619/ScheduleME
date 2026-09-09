@@ -1,7 +1,9 @@
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from .config import get_settings
 from .database import Base, engine
@@ -38,3 +40,8 @@ app.include_router(webhook.router)
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+frontend_dir = os.environ.get("FRONTEND_OUT_DIR", "/app/frontend_out")
+if os.path.isdir(frontend_dir):
+    app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
